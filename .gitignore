@@ -1,3 +1,5 @@
+var/data/mongo
+
 ### macOS ###
 *.DS_Store
 .AppleDouble
@@ -217,5 +219,3 @@ xcuserdata/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
-
-# End of https://www.gitignore.io/api/node,xcode,webstorm,sublimetext,senchatouch
