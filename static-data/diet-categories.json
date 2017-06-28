@@ -1,0 +1,94 @@
+// diet categories
+
+"data": [{
+    "name": "Vegan",
+    "description": "A plant based diet with no animal products. They do not eat meat, fish, eggs or dairy products.",
+    "exclude": [
+        "meat",
+        "fish",
+        "eggs",
+        "dairy"
+    ]
+}, {
+    "name": "Ovo-Vegetarian",
+    "description": "Eat mostly plants in addition to eggs. They do not eat dairy products, meat or fish.",
+    "exclude": [
+        "dairy",
+        "meat",
+        "fish"
+    ]
+}, {
+    "name": "Lacto-Vegetarian",
+    "description": "Eat mostly plants in addition to dairy products. They do not eat eggs, meat or fish.",
+    "exclude": [
+        "eggs",
+        "meat",
+        "fish"
+    ]
+}, {
+    "name": "Lacto-Ovo Vegetarian",
+    "description": "Eat mostly plants in addition to dairy products and eggs. They do not eat meat or fish.",
+    "exclude": [
+        "meat",
+        "fish"
+    ]
+}, {
+    "name": "Pescetarian",
+    "description": "Vegetarian diet but they also eat fish. They do not eat meat.",
+    "exclude": [
+        "meat"
+    ]
+}, {
+    "name": "Bahå'i",
+    "description": "",
+    "exclude": [
+        "alcohol"
+    ]
+}, {
+    "name": "Buddhism",
+    "description": "",
+    "exclude": [],
+}, {
+    "name": "christianity",
+    "description": "",
+    "exclude": []
+}, {
+    "name": "hinduism",
+    "description": "",
+    "exclude": [
+        "meat",
+        "fish",
+        "poultry",
+        "eggs"
+        "garlic",
+        "onions",
+        "alcohol",
+        "tea",
+        "coffee"
+    ]
+}, {
+    "name": "judaism",
+    "description": "",
+    "exclude": [
+        "emulsifiers (of animal origin)",
+        "stabilizers (of animal origin)",
+        "gelatin",
+        "non-kosher meat",
+        "birds of prey and non-kosher fish such as prawns",
+        "shellfish",
+        "turbot skate and sturgeon"
+    ]
+}, {
+    "name": "islam",
+    "description": "",
+    "exclude": [
+        "Pork",
+        "lard",
+        "gelatin from animal source that is not halal",
+        "meat that is not slaughtered in the prescribed Islamic way",
+        "meat coming from a lawful animal which died before slaughter",
+        "blood",
+        "any food or drink with alcohol",
+        "all carnivorous animals and birds of prey and some non-halal additives"
+    ]
+}]

@@ -1,0 +1,36 @@
+{
+  "name": "atm-api-server",
+  "version": "0.0.1",
+  "description": "REST API Server for All the Menu.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "mongod --config config-mongodb.yml",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Shayne Trosdahl @trozdol",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "mongoose": "^4.10.4",
+    "multer": "^1.3.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
+    "passport-local-mongoose": "^4.0.0",
+    "validator": "^7.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trozdol/atm-api-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Trozdol/atm-api-server/issues"
+  },
+  "homepage": "https://github.com/Trozdol/atm-api-server#readme"
+}
