@@ -1,6 +1,6 @@
 
 storage:
-    dbPath: "/Users/trozdol/Server/_databases/mongo"
+    dbPath: "/Users/trozdol/Server/_databases/mongo-auth"
     journal:
         enabled: true
 systemLog:

@@ -31,9 +31,8 @@ const API = {
 
 // log.json(config);
 
-database.connect(config.database, (err) => {
-    if (err) return error.log(err);
-    console.log('database : ' + config.database + '\n ');
+database.connect(config.database, {
+    useMongoClient: true
 });
 
 // START APPLICATION SERVER:
