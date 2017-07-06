@@ -1,5 +1,5 @@
 {
-  "name": "atm-api-server",
+  "name": "base-api-auth",
   "version": "0.0.1",
   "description": "Base Node API for Authenitication",
   "main": "server.js",
@@ -24,12 +24,6 @@
     "validator": "^7.2.0"
   },
   "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Trozdol/atm-api-server.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Trozdol/atm-api-server/issues"
-  },
-  "homepage": "https://github.com/Trozdol/atm-api-server#readme"
+  "repository": {},
+  "bugs": {}
 }
