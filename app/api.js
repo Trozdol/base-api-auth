@@ -33,9 +33,9 @@ api.get('/');
 
 // PROTECTED ROUTES:
 //
-api.post('/register', account.register,   authenticate.createToken, account.getAccountInfo);
+api.post('/register', account.register,   authenticate.createToken, account.get);
 api.post('/login',    authenticate.login, authenticate.createToken);
-api.get('/account',   authenticate.token, account.getAccountInfo);
+api.get('/account',   authenticate.token, account.get);
 
 // API MIDDLEWARE:
 // Apply to all routes after specific route handlers are run.

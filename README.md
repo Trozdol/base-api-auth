@@ -21,12 +21,21 @@ Start the API Server:
 Should now be running on localhost:8080
 
 
-### Creating an Account:
+### Register:
 
 POST: `http://localhost:8080/api/register`
 
+```bash
+curl \
+-H "Content-Type: application/json" \
+-X GET http://localhost:8080/api/login \
+-d '{ "email": "example@trozdol.com", "username": "examplename", "password": "123" }'
+```
+
+#### Full Example Body:
+
     {
-        "username": "your_handle",
+        "username": "yourhandle",
         "email": "you@example.com",
         "password": "123",
         "name": {
@@ -35,31 +44,42 @@ POST: `http://localhost:8080/api/register`
         }
     }
 
+### Login:
+
 POST: `http://localhost:8080/api/login`
 
-    {
-    	"email": "shayne@trozdol.com",
-    	"password": "123"
-    }
+```bash
+curl \
+-H "Content-Type: application/json" \
+-X GET http://localhost:8080/api/login \
+-d '{ "email": "example@trozdol.com", "password": "123" }'
+```    
 
-    # Successful Auth Example Response:
+#### Example Response:
 
     {
         "code": null,
         "message": "OK",
         "success": true,
         "data": [],
-        "token": "yyy.xxx.zzz"
+        "token": "xxx.yyy.zzz"
     }
 
 
 ### Authenticating Other Requests
 
+```bash
+curl \
+-H "Content-Type: application/json" \
+-H "Authorization: JWT xxx.yyy.zzz" \
+-X GET http://localhost:8080/api/account
+```
+
 #### Headers:
 
     "Authorization" : "JWT <token>"
 
-#### Body: (needs some tweaks)
+#### Body: (needs some tweaks/coming soon)
 
     {
         ...
@@ -67,6 +87,6 @@ POST: `http://localhost:8080/api/login`
     }
 
 
-#### Query Param: (needs some tweaks)
+#### Query Param: (needs some tweaks/coming soon)
 
     http://localhost:8080/api/account?token=<token>

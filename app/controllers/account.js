@@ -34,14 +34,14 @@ const account = {
             res.locals.message = 'New Account Created';
 
             req.user = rec;
-            
+
             console.json(null, res.locals);
             next();
         });
     },
 
-    getAccountInfo: async (req, res, next) => {
-        console.log('\naccount.getAccountInfo()');
+    get: async (req, res, next) => {
+        console.log('\naccount.get()');
         console.json('res.locals', res.locals);
 
         const rec = await Account.findOne(req.user._id).exec();
