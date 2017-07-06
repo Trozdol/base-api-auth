@@ -1,4 +1,9 @@
 
+const db = {
+    name: 'demo',
+    uri: 'mongodb://localhost:27017/'
+};
+
 const config = {
     title: 'API Server',
     secret: 'secret',
@@ -6,7 +11,7 @@ const config = {
     server: {
         port: 8080
     },
-    database: 'mongodb://localhost:27017/roms',
+    database: db.uri + db.name,
     api: {
         version: '0.0.1'
     }

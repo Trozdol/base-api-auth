@@ -1,0 +1,10 @@
+//
+// THEORETICAL FUTURE OF CONFIGURATION... ASSUMING I DON'T FIND ISSUE WITH THIS.
+//
+
+
+const HOST = {};
+
+const DB = {};
+
+const AUTH = {};

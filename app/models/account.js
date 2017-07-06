@@ -11,15 +11,15 @@ const Account = new Schema({
         unique: true,
         lowercase: true,
         trim: true,
-        validate: [ validator.isEmail, 'Invalid email address' ],
-        required: 'Email required.'
+        validate: validator.isEmail,
+        required: 'Email required'
     },
     username: {
         type: String,
         unique: true,
         lowercase: true,
         trim: true,
-        required: 'Username required.'
+        required: 'Username required'
     },
     name: {
         first: { type: String, trim: true },
@@ -39,11 +39,19 @@ const Account = new Schema({
     toObject: { virtuals: true }
 });
 
-Account.virtual('restaurants', {
-    ref: 'Restaurant',
-    localField: '_id',
-    foreignField: 'admin'
-});
+// Account.path('email').validate(function(value, done) {
+//     console.log('validate email', value);
+//
+//     this.model('Account').count({ email: value }, function(err, count) {
+//         console.log('count', count);
+//         if (err) {
+//             console.log('err', err);
+//             return done(err);
+//         }
+//         // If `count` is greater than zero, "invalidate"
+//         done(!count);
+//     });
+// }, 'Email already exists');
 
 Account.plugin(passportLocalMongoose, {
     saltlen                 : 32,                       // the salt length in bytes. Default: 32

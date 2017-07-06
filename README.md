@@ -1,13 +1,22 @@
-RESTAURANT ORDER MANAGEMENT SYSTEM
-==================================
+BASE API AUTHENTICATION
+=======================
+
+Update `config-mongodb.yml` to point to where you want MongoDB to point.
+
+    storage:
+        dbPath: "/path/to/mongo-auth"
 
 Assuming MongoDB is installed locally...
 
     mongod -f config-mongod.yml
 
+
 Start the API Server:
 
+    npm install # if first time.
+
     npm start
+
 
 Should now be running on localhost:8080
 
@@ -40,98 +49,24 @@ POST: `http://localhost:8080/api/login`
         "message": "OK",
         "success": true,
         "data": [],
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5NTJmMDkwMWQ4Mjk4NDU3ZmQ0OTZiMCIsImlhdCI6MTQ5ODYwODM5MH0.WJbI06MKcMDWELZnEfdMUwkxOPllNHjechuXiU0kKq8"
+        "token": "yyy.xxx.zzz"
     }
 
 
+### Authenticating Other Requests
 
-SETUP
------
-```json
+#### Headers:
 
-{
-    "name": "Lunch",
-    "description": "Mid day food!",
-    "restaurant": "5930a58b9fe5f15b5416418d",
-    "available": [{
-        "day": "Sunday",
-        "start": "11:00",
-        "end": "14:00"
-    }, {
-        "day": "Monday",
-        "start": "11:00",
-        "end": "14:00"
-    }, {
-        "day": "Tuesday",
-        "start": "11:00",
-        "end": "14:00"
-    }, {
-        "day": "Wednesday",
-        "start": "11:00",
-        "end": "14:00"
-    }, {
-        "day": "Thursday",
-        "start": "11:00",
-        "end": "14:00"
-    }, {
-        "day": "Friday",
-        "start": "11:00",
-        "end": "14:00"
-    }, {
-        "day": "Saturday",
-        "start": "11:00",
-        "end": "14:00"
-    }],
-    "products": []
-}
+    "Authorization" : "JWT <token>"
 
-```
+#### Body: (needs some tweaks)
 
-Product:
--------
+    {
+        ...
+        "token": "JWT <token>"
+    }
 
-```json
-// product with options
-{
-    "name": "Edamame",
-    "description": "Cracked Black Pepper & Sea Salt",
-    "instock": true,
-    "price": 5.00,
-    "options": [{
-        "name": "Sea Salt",
-        "description": "",
-        "bump": 0.00
-    }, {
-        "name": "Garlic Lime",
-        "description": "",
-        "bump": 1.00
-    }, {
-        "name": "Spicy",
-        "description": "",
-        "bump": 2.00
-    }],
-    "parts": []
-}
 
-{
-    "name": "Tempura Green Beans",
-    "restaurant": "5930a58b9fe5f15b5416418d",
-    "descrition":"fresh snipped green beans, tempura fried & served with kimchi aioli",
-    "instock": true,
-    "price": 7.00,
-    "options": [],
-    "parts": []
-}
+#### Query Param: (needs some tweaks)
 
-```
-
-Part:
-----
-
-```json
-
-{
-
-}
-
-```
+    http://localhost:8080/api/account?token=<token>
